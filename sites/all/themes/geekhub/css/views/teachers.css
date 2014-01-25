@@ -1,0 +1,138 @@
+.view-teachers {
+
+}
+
+.view-teachers .view-content {
+
+}
+
+.view-teachers .view-content ul {
+
+}
+
+.view-teachers .view-content li {
+
+}
+
+.view-teachers .view-content li.views-row-odd {
+
+}
+
+
+.view-teachers .view-content li.views-row-even {
+
+}
+
+.view-teachers .view-content .views-field-title {
+
+}
+
+.view-teachers .view-content .views-field-body {
+    float: right;
+}
+
+.view-teachers .view-content .views-field-title {
+
+}
+
+.view-teachers .view-content .views-field-field-image {
+
+}
+
+.view-teachers .view-content .views-field-field-position {
+
+}
+
+/*----------------------------------------------------------------------------------*/
+/*-------------------------------------TEAM----------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+.view-teachers a {
+    color:#E11D5D;
+}
+.view-teachers a:hover {
+    text-decoration:underline;
+}
+.view-teachers h2 {
+    font-family: "Trebuchet MS";
+    font-weight:normal;
+    font-size:50px;
+    line-height:50px;
+    padding:0 0 8px;
+    margin: 0 0 27px;
+    border-bottom:1px solid #a7c3cf;
+}
+
+.view-teachers ul {
+    overflow:hidden;
+    padding:0 40px;
+}
+.view-teachers ul li {
+    overflow:hidden;
+    /*height:170px;*/
+    padding:0 0 15px;
+}
+.view-teachers ul li h3 {
+    float:right;
+    width:185px;
+    padding: 37px 0 7px;
+    font-family: "Trebuchet MS";
+    font-weight:normal;
+    font-size:25px;
+    line-height:29px;
+    color:#ea2778;
+}
+
+.view-teachers ul li.views-row-odd h3 {
+    float:left;
+}
+
+.view-teachers ul li .views-field-field-position {
+    padding: 37px 0 7px;
+    font-family: arial;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    padding-top: 5px;
+    color: #f3753e;
+    width: 185px;
+    height: 0px;
+}
+
+.view-teachers ul li.views-row-even .views-field-field-position {
+    float:right;
+    clear: both;
+}
+
+.view-teachers ul li img {
+    float:right;
+    display:block;
+    margin:0 21px;
+}
+.view-teachers ul li p {
+    /*float:left;*/
+    overflow:hidden;
+    padding:40px 0 0;
+    text-align:right;
+    font-size:14px;
+    line-height:20px;
+    width: 400px;
+}
+
+.view-teachers ul li.views-row-odd {
+    text-align:right;
+}
+
+.view-teachers ul li.views-row-odd h3 span {
+    display:block;
+}
+.view-teachers ul li.views-row-odd img {
+    float:left;
+    display:block;
+}
+.view-teachers ul li.views-row-odd p {
+    /*float:left;*/
+    overflow:hidden;
+    text-align:left;
+}
+
+

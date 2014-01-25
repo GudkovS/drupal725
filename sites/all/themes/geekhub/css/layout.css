@@ -1,0 +1,66 @@
+html {
+
+}
+
+body {
+
+}
+
+#page-wrapper {
+
+}
+
+#page {
+    width: 900px;
+    overflow: visible;
+    margin: 0 auto;
+    padding: 0 0 80px;
+}
+
+
+#top-region-wrapper {
+
+}
+
+#top-region {
+
+}
+
+#header-region-wrapper {
+
+}
+
+#header-region {
+
+}
+
+#menu-region-wrapper {
+
+}
+
+#menu-region {
+
+}
+
+#left-sidebar-region-wrapper {
+    width: 200px;
+    padding: 0 40px 0 0;
+    float: left;
+}
+
+#content-region-wrapper {
+
+}
+
+#content-region {
+    overflow: hidden;
+}
+
+#footer-region-wrapper {
+
+}
+
+#footer-region {
+
+}
+

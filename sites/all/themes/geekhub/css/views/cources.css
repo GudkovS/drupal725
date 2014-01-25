@@ -1,0 +1,57 @@
+.view-our-cources {
+
+}
+
+.view-our-cources li.views-row {
+    float: left;
+    height: 200px;
+    width: 295px;
+    padding: 24px 5px 24px 0;
+    border-top: 1px solid #D2DCE1;
+    margin: 0;
+}
+
+.view-our-cources .views-field-title {
+
+}
+
+
+.view-our-cources .views-field-title h3 {
+    font-family: "Trebuchet MS";
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 27px;
+    color: #EA2778;
+}
+
+
+.view-our-cources .views-field-field-image {
+    display: block;
+    float: left;
+    margin: 0 15px 0 0;
+}
+
+.view-our-cources .views-field-body p {
+    overflow: hidden;
+    margin: 13px 10px 0 0;
+    font-size: 13px;
+    line-height: 18px;
+    color: #39525A;
+}
+
+.view-our-cources .views-field-nid {
+
+
+}
+
+.view-our-cources .views-field-nid a {
+    display: block;
+    padding: 10px 0 0 115px;
+    text-decoration: underline;
+    color: #EA2678;
+}
+
+.view-our-cources .views-field-nid a:hover {
+    text-decoration: none;
+}
+
