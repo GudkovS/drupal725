@@ -1,0 +1,7 @@
+name = Block with RSS inside
+description = Create block with RSS inside
+package = Geekhub
+dependencies[] = block
+
+version = "7.x-1.x-dev"
+core = "7.x"

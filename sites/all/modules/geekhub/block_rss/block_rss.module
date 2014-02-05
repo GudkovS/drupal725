@@ -1,0 +1,57 @@
+<?php
+/**
+ * Implements hook_block_info().
+ */
+function block_rss_block_info() {
+    $blocks['block_rss'] = array(
+        'info' => t('Geekhub: Block rss'),
+        'cache' => DRUPAL_NO_CACHE,
+    );
+    return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function block_rss_block_view($delta = '') {
+
+    $block = array();
+
+    if ($delta == 'block_rss') {
+
+        $items = '';
+
+        // get cource info from DB
+        $sub_query = db_select('node', 'n');
+        $sub_query->fields('n', array('title', 'nid'));
+        $sub_query->condition('n.type', 'cource');
+
+        $query = db_select('field_data_body', 'fdb');
+        $query->fields('fdb', array('entity_id', 'body_value'));
+        $query->join($sub_query, 'n', 'fdb.entity_id=n.nid');
+        $query->fields('n', array('title', 'nid'));
+        $result = $query->execute();
+
+        global $base_url;
+
+        foreach ($result as $cource) {
+            //cut the text up to 200 characters
+            $summary = text_summary($cource->body_value, NULL, 200);
+            $items .= format_rss_item($cource->title, $base_url . '/cources', $summary);
+        }
+
+        $site_name = variable_get('site_name', 'Drupal');
+        $url = url(('aggregator'), array('absolute' => TRUE));
+        $description = t('@site_name - aggregated cource list', array('@site_name' => $site_name));
+
+        $output  = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
+        $output .= "<rss version=\"2.0\">\n";
+        $output .= format_rss_channel(t('@site_name aggregator', array('@site_name' => $site_name)), $url, $description, $items);
+        $output .= "</rss>\n";
+
+        $block['subject'] = 'Block rss';
+        $block['content'] = $output;
+    }
+
+    return $block;
+}
