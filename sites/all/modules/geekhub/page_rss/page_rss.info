@@ -1,0 +1,6 @@
+name = Page with RSS inside
+description = Create page with RSS inside
+package = Geekhub
+
+version = "7.x-1.x-dev"
+core = "7.x"

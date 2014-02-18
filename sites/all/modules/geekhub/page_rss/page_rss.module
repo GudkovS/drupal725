@@ -1,0 +1,71 @@
+<?php
+
+function page_rss_menu() {
+    $items['rss'] = array(
+        'page callback' => 'page_rss_view',
+        'access callback' => TRUE,
+    );
+    $items['rss/%'] = array(
+        'page callback' => 'page_rss_view_param',
+        'page arguments' => array(1),
+        'access callback' => TRUE,
+    );
+    return $items;
+}
+
+function page_rss_view() {
+
+    $url = "http://drupalize.me/blog/feed";
+    $xml = simplexml_load_file($url);
+    $rss_obj = $xml->channel->item;
+
+    //dpm($rss_obj);
+    //dprint_r($rss_obj);
+
+    $output = '';
+    $output .= '<h1>RSS page - 5 items</h1>';
+    $output .= '<ul class="page_rss">';
+    for ($i = 0; $i < 5; $i++) {
+        $output .= '<li>';
+            $output .= '<h2><a href="' . $rss_obj[$i]->link . '">' . $rss_obj[$i]->title . '</a></h2>';
+            $output .= '<div>' . $rss_obj[$i]->description . '</div>';
+        $output .= '</li>';
+    }
+    $output .= '</ul>';
+
+    //dpm($output);
+    //dprint_r($output);
+
+   // dpm($rss_item);
+   // dprint_r($rss_item);
+
+    return $output;
+}
+
+
+function page_rss_view_param($param) {
+
+    $url = "http://drupalize.me/blog/feed";
+    $xml = simplexml_load_file($url);
+    $rss_obj = $xml->channel->item;
+
+    if (!is_numeric($param)) {
+        return drupal_not_found();
+    }
+
+    $rss_item_num = intval($param);
+    if (!$rss_obj[$rss_item_num]) {
+        return drupal_not_found();
+    }
+
+    $output = '';
+    $output .= '<h1>RSS page - items #' . $param . '</h1>';
+    $output .= '<ul class="page_rss">';
+        $output .= '<li>';
+        $output .= '<h2><a href="' . $rss_obj[$rss_item_num]->link . '">' . $rss_obj[$rss_item_num]->title . '</a></h2>';
+        $output .= '<div>' . $rss_obj[$rss_item_num]->description . '</div>';
+        $output .= '</li>';
+    $output .= '</ul>';
+
+    return $output;
+}
